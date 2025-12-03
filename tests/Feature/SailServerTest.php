@@ -73,7 +73,7 @@ class SailServerTest extends TestCase
         $response = $this->get('/example-app?php');
 
         $response->assertStatus(400);
-        $response->assertSee('Invalid PHP version. Please specify a supported version (74, 80, 81, 82, 83, or 84).');
+        $response->assertSee('Invalid PHP version. Please specify a supported version (74, 80, 81, 82, 83, 84 or 85).');
     }
 
     public function test_it_does_not_accept_invalid_php_versions()
@@ -81,7 +81,7 @@ class SailServerTest extends TestCase
         $response = $this->get('/example-app?php=1000');
 
         $response->assertStatus(400);
-        $response->assertSee('Invalid PHP version. Please specify a supported version (74, 80, 81, 82, 83, or 84).');
+        $response->assertSee('Invalid PHP version. Please specify a supported version (74, 80, 81, 82, 83, 84 or 85).');
     }
 
     public function test_it_does_not_accept_empty_with_query_when_present()
